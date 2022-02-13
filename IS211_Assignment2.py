@@ -27,7 +27,7 @@ def processData(filecontent):
             real_birthday = datetime.datetime.strptime(birthday, "%d/%m/%Y")
             person_dict[id_int] = (name, real_birthday)
         except ValueError as e:
-            error_msg = "Error processing line #{} for ID #{}.".format(id, id)
+            error_msg = "Error processing line #{} for ID #{}.".format(data_line, id_int)
             logging.basicConfig(filename="error.log", level=logging.ERROR)
             logger = logging.getLogger("assignment2")
             logger.error(error_msg)
